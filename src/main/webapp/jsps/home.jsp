@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Mithun Technologies - GitHub Webhook Demo  .....</h1>
-<h1 align="center"> Welcome to Mithun Software Solutions.......We have a DevOps Master Program demo on Sep 13th and the timings will be updated soon . 
+<h1 align="center"> Welcome to Mithun Software Solution...We have a DevOps Master Program demo on Sep 13th and the timings will be updated soon . 
 	
 	<hr>
 <div style="text-align: center;">
