@@ -4,6 +4,7 @@ node {
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
     
     try {
+    slacknotification ('STARTED')
     stage ('checkout'){
     git branch: 'development', credentialsId: 'ff7d6067-3be9-4b9b-b1c9-a54a11c33b56', url: 'https://github.com/GodsEye-Org/maven-web-application.git'
     }
