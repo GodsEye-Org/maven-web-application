@@ -56,4 +56,4 @@ node {
   // Send notifications
   slackSend (color: colorCode, message: summary)
 }
-}
+
