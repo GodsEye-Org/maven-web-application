@@ -7,6 +7,7 @@ maven "maven3.8.6"
 stages{
      stage ('checkoutcode') {
      steps {
+     slacknotification "STARTED"
       git branch: 'development', credentialsId: 'ff7d6067-3be9-4b9b-b1c9-a54a11c33b56', url: 'https://github.com/GodsEye-Org/maven-web-application.git'
      }
      }
