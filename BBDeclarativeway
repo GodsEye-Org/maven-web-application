@@ -1,0 +1,10 @@
+pipeline {
+agent any
+
+stages{
+     stage ('checkoutcode')
+      git branch: 'development', credentialsId: 'ff7d6067-3be9-4b9b-b1c9-a54a11c33b56', url: 'https://github.com/GodsEye-Org/maven-web-application.git'
+     }
+     stage ('Build')
+     sh "mvn clean package"
+}
