@@ -29,7 +29,7 @@ node {
     finally {
     slacknotification(currentBuild.result)
     }
-    
+}
     //slack notification block
     def slacknotification(String buildStatus = 'STARTED') {
  
