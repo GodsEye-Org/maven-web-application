@@ -13,7 +13,24 @@ stages{
      stage ('Build') {
      steps {
      sh "mvn clean package"
-}
-}
+     }
+     }
+     stage ('Sonarqubereport') {
+     steps {
+     sh "mvn sonar:sonar"
+     }
+     }
+     stage ('uploadtoNexusRepo') {
+     steps {
+     sh "mvn deploy"
+     }
+     }
+     stage ('Tomcatserver') {
+     steps {
+     sshagent(['211021b8-30d4-4551-b080-009cd89e780d']){ 
+     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52.66.253.54:/opt/apache-tomcat-9.0.64/webapps/"
+     }
+     }
+     }
 }
 }
