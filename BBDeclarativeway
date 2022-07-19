@@ -4,11 +4,16 @@ agent any
 tools {
 maven "maven3.8.6"
 }
+
+parameters {
+  choice choices: ['development', 'master', 'qa', 'uat'], name: 'brnachname'
+}
+
 stages{
      stage ('checkoutcode') {
      steps {
      slacknotification "STARTED"
-      git branch: 'development', credentialsId: 'ff7d6067-3be9-4b9b-b1c9-a54a11c33b56', url: 'https://github.com/GodsEye-Org/maven-web-application.git'
+      git branch: '${params.brnachname}', credentialsId: 'ff7d6067-3be9-4b9b-b1c9-a54a11c33b56', url: 'https://github.com/GodsEye-Org/maven-web-application.git'
      }
      }
      stage ('Build') {
